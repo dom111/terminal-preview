@@ -18,12 +18,9 @@ javascript:(function() {
         head.appendChild(element);
     },
     _done = function() {
-        [
-            'https://cdn.rawgit.com/dom111/terminal-preview/master/dist/terminal-min.css',
-            'https://cdn.rawgit.com/dom111/terminal-preview/master/dist/terminal-min.js',
-            'https://cdn.rawgit.com/dom111/terminal-preview/master/dist/parse-min.js'
-        ].forEach(function(file) {
-            (file.match(/css$/) ? _createStyle : _createScript)(file);
+        _createScript('https://cdn.rawgit.com/dom111/terminal-preview/master/dist/parse-min.js', function() {
+            _createStyle('https://cdn.rawgit.com/dom111/terminal-preview/master/dist/terminal-min.css');
+            _createScript('https://cdn.rawgit.com/dom111/terminal-preview/master/dist/terminal-min.js')
         });
     };
 

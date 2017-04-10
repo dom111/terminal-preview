@@ -52,8 +52,8 @@
 \e[35m./terminal.css\e[m\e[36m:\e[m.terminal-wrap:hover .\e[01;31mcursor\e[m,
 \e[35m./terminal.css\e[m\e[36m:\e[m.terminal:focus .\e[01;31mcursor\e[m { display: none; }</pre>
                     <p>You could also <code class="terminal">\e[5mpreview\e[0m items as an \e[31;4minline element\e[0m</code>. There are also classes that can change the style to a light terminal <code class="terminal light">\e[32mlike this</code>, or add in a cursor <code class="terminal blink-cursor cursor-pipe">like this</code> or <code class="terminal cursor-block">this</code>.</p>
-                    <p>I've used the component as an input where content is evaluated as your type. Try typing <code>\e[31mRed! \e[39mBack to normal!</code> and you can see the element changing style as you type:</p>
-                    <pre class="terminal" contenteditable="true"></pre>
+                    <p>I've used the component as an input where content is evaluated as your type. Try changing the <code>31</code> to <code>34</code> and you can see the element changing style as you type:</p>
+                    <pre class="terminal" contenteditable="true">\e[31mRed\e[m and \e[32mgreen\e[m and \e[33myellow\e[m!</pre>
                     <p>By default the control characters aren't shown, until hovered or when the element has focus. Likewise any non-existent items (like the cursor or interpreted control codes) will be hidden.</p>
                 </div>
             </section>
@@ -63,9 +63,9 @@
                     <h2 class="panel-title panel-title-lg">Where to get it?</h2>
                 </div>
                 <div class="panel-body">
-                    <p>There's a <a href="https://github.com/dom111/terminal-preview" target="_blank">github repository</a> that you can use and a blog post about it. You're free to use thism but if you make something cool I'd love to see it!</p>
+                    <p>There's a <a href="https://github.com/dom111/terminal-preview" target="_blank">github repository</a> that you can use and <a href="https://dom.hastin.gs/blog/coding/terminal-preview/541" target="_blank">a blog post about it</a>. You're free to use this, but if you make something cool I'd love to see it!</p>
                     <p>Utilising rawgit, it's possible to add the following code to your page and automatically process elements with a class of <code>terminal</code>:</p>
-                    <pre>!function(){var e=document.getElementsByTagName("head")[0],t=function(t,a){var r=document.createElement("script");r.src=t,r.type="text/javascript",a&&(r.onload=a),e.appendChild(r)},a=function(t){var a=document.createElement("link");a.href=t,a.rel="stylesheet",e.appendChild(a)},r=function(){["https://cdn.rawgit.com/dom111/terminal-preview/master/dist/terminal-min.css","https://cdn.rawgit.com/dom111/terminal-preview/master/dist/terminal-min.js","https://cdn.rawgit.com/dom111/terminal-preview/master/dist/parse-min.js"].forEach(function(e){(/css$/.test(e)?a:t)(e)})};"jQuery"in window?r():t("https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js",r)}();</pre>
+                    <pre>!function(){var e=document.getElementsByTagName(&quot;head&quot;)[0],t=function(t,n){var i=document.createElement(&quot;script&quot;);i.src=t,i.type=&quot;text/javascript&quot;,n&amp;&amp;(i.onload=n),e.appendChild(i)},n=function(t){var n=document.createElement(&quot;link&quot;);n.href=t,n.rel=&quot;stylesheet&quot;,e.appendChild(n)},i=function(){t(&quot;https://cdn.rawgit.com/dom111/terminal-preview/master/dist/parse-min.js&quot;,function(){n(&quot;https://cdn.rawgit.com/dom111/terminal-preview/master/dist/terminal-min.css&quot;),t(&quot;https://cdn.rawgit.com/dom111/terminal-preview/master/dist/terminal-min.js&quot;)})};&quot;jQuery&quot;in window?i():t(&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js&quot;,i)}();</pre>
                 </div>
             </section>
         </div>
@@ -73,8 +73,7 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script type="text/javascript">
-            !function(){var e=document.getElementsByTagName("head")[0],t=function(t,a){var r=document.createElement("script");r.src=t,r.type="text/javascript",a&&(r.onload=a),e.appendChild(r)},a=function(t){var a=document.createElement("link");a.href=t,a.rel="stylesheet",e.appendChild(a)},r=function(){["https://cdn.rawgit.com/dom111/terminal-preview/master/dist/terminal-min.css","https://cdn.rawgit.com/dom111/terminal-preview/master/dist/terminal-min.js","https://cdn.rawgit.com/dom111/terminal-preview/master/dist/parse-min.js"].forEach(function(e){(/css$/.test(e)?a:t)(e)})};"jQuery"in window?r():t("https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js",r)}();
-
+            !function(){var e=document.getElementsByTagName("head")[0],t=function(t,n){var i=document.createElement("script");i.src=t,i.type="text/javascript",n&&(i.onload=n),e.appendChild(i)},n=function(t){var n=document.createElement("link");n.href=t,n.rel="stylesheet",e.appendChild(n)},i=function(){t("https://cdn.rawgit.com/dom111/terminal-preview/master/dist/parse-min.js",function(){n("https://cdn.rawgit.com/dom111/terminal-preview/master/dist/terminal-min.css"),t("https://cdn.rawgit.com/dom111/terminal-preview/master/dist/terminal-min.js")})};"jQuery"in window?i():t("https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js",i)}();
         </script>
     </body>
 </html>

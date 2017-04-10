@@ -1,4 +1,4 @@
-var parse = (function() {
+var parse = (function($) {
     var _currentStyle = {
         bg: '49',
         fg: '39',
@@ -426,4 +426,4 @@ var parse = (function() {
     parse.defaultStyle = _defaultStyle;
 
     return parse;
-})();
+})(jQuery);

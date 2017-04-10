@@ -612,7 +612,7 @@ pre.terminal { padding: 1em .5em; }
 .terminal .variable .content,
 .terminal .command .content,
 .terminal .token .content,
-.terminal [data-preview] .content { display: inline-block; width: 0; color: transparent; }
+.terminal [data-preview] .content { display: inline-block; width: 0px; height: 0px; font-size: 0; color: transparent; }
 
 .terminal .hex:after,
 .terminal .octal:after,
@@ -649,7 +649,7 @@ pre.terminal { padding: 1em .5em; }
 .terminal:focus .content .wrap,
 .terminal:focus .content,
 .terminal-wrap:hover .terminal .content .wrap,
-.terminal-wrap:hover .terminal .content { color: inherit; display: inline; }
+.terminal-wrap:hover .terminal .content { color: inherit; display: inline; font-size: inherit; }
 .terminal:focus *:after,
 .terminal-wrap:hover *:after { content: '' !important; }
 .terminal-wrap { position: relative; }
