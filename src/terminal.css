@@ -603,6 +603,10 @@ pre.terminal { padding: 1em .5em; }
 .terminal .underline { text-decoration: underline; }
 .terminal .overline { text-decoration: overline; }
 .terminal .strikethrough { text-decoration: line-through; }
+.terminal .underline.overline { text-decoration: underline overline; }
+.terminal .overline.strikethrough { text-decoration: overline line-through; }
+.terminal .underline.strikethrough { text-decoration: underline line-through; }
+.terminal .underline.overline.strikethrough { text-decoration: underline overline line-through; }
 .terminal .hidden { visibility: hidden; }
 .terminal .blink { animation: blink 1s linear infinite; }
 
