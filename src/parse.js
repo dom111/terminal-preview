@@ -156,7 +156,7 @@ var parse = (function($) {
             var match;
 
             if (match = style[obj.key].match(/true-(\d+)-(\d+)-(\d+)/)) {
-                styleString += obj.n + ';2;' + match.slice(1).join(';');
+                styleString += obj.n + ';2;' + match.slice(1).join(';') + ';';
             }
             else if (match = style[obj.key].match(/256-(\d+)/)) {
                 styleString += obj.n + ';5;' + match[1] + ';';
