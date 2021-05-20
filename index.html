@@ -4,9 +4,7 @@
         <title>terminal-preview</title>
 
         <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/default.min.css"/>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/styles/monokai-sublime.min.css"/>
-        <link rel="stylesheet" type="text/css" href="dist/terminal-min.css"/>
+        <link rel="stylesheet" type="text/css" href="dist/terminal.css"/>
         <style type="text/css">
             h1 .version { opacity: 0; font-size: 0.8em; font-family: monospace; letter-spacing: -5px; transition: .25s opacity linear; }
             h1:hover .version { opacity: .3; }
@@ -22,7 +20,7 @@
 
         <div class="jumbotron">
             <div class="container">
-                <h1><code>terminal-preview</code> <span class="version" title="Last updated: 2017-04-10">v0.1</span></h1>
+                <h1><code>terminal-preview</code> <span class="version" title="Last updated: 2021-05-20">v0.2</span></h1>
                 <p>An HTML element that is ANSI-escape styling sequence aware.</p>
                 <p>Can be used to display raw ANSI-styled terminal data, or as an interactive element using the <code>contenteditable="true"</code> HTML attribute.</p>
             </div>
@@ -59,25 +57,19 @@
                     <aside class="options">
                         <h3>Use it</h3>
                         <p>There's a <a href="https://github.com/dom111/terminal-preview">github repository</a> that you can use. You're free to use this as you wish, but if you make something cool I'd love to see it!</p>
-                        <p>Utilising rawgit, it's possible to add the following code to your page and automatically process elements with a class of <code>terminal</code>:</p>
-                       <pre class="copy-paste"><code class="js">!function(){var e=document.getElementsByTagName(&quot;head&quot;)[0],t=function(t,a){var r=document.createElement(&quot;script&quot;);r.src=t,r.type=&quot;text/javascript&quot;,a&amp;&amp;(r.onload=a),e.appendChild(r)},a=function(t){var a=document.createElement(&quot;link&quot;);a.href=t,a.rel=&quot;stylesheet&quot;,e.appendChild(a)},r=function(){[&quot;https://cdn.rawgit.com/dom111/terminal-preview/master/dist/terminal-min.css&quot;,&quot;https://cdn.rawgit.com/dom111/terminal-preview/master/dist/terminal-min.js&quot;,&quot;https://cdn.rawgit.com/dom111/terminal-preview/master/dist/parse-min.js&quot;].forEach(function(e){(/css$/.test(e)?a:t)(e)})};&quot;jQuery&quot;in window?r():t(&quot;https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js&quot;,r)}();</code><a class="btn btn-primary btn-xs copy" href="#" data-clipboard-target="pre.copy-paste code">Copy</a></pre>
                     </aside>
                 </div>
             </section>
 
             <footer>
-                <p>Copyright &copy; 2017 <a href="https://dom.hastin.gs/">Dom Hastings</a></p>
+                <p>Copyright &copy; 2017-2021 <a href="https://dom.hastin.gs/">Dom Hastings</a></p>
             </footer>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/1.6.0/clipboard.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.11.0/highlight.min.js"></script>
-        <script type="text/javascript" src="dist/terminal-min.js"></script>
-        <script type="text/javascript" src="dist/parse-min.js"></script>
+        <script type="text/javascript" src="dist/terminal.js"></script>
         <script type="text/javascript">
-            hljs.initHighlightingOnLoad();
-
             if (Clipboard.isSupported()) {
                 new Clipboard('a.copy');
             }
@@ -88,16 +80,6 @@
             $('a.copy').on('click', function(event) {
                 event.preventDefault();
             });
-        </script>
-        <script>
-          (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-          (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-          })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-          ga('create', 'UA-5273748-7', 'auto');
-          ga('send', 'pageview');
-
         </script>
     </body>
 </html>
