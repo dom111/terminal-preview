@@ -27,7 +27,7 @@ let currentStyle: Style = {
   strikethrough: false, // \e[9m
 };
 
-export const defaultStyle: Style = {
+const defaultStyle: Style = {
   ...currentStyle,
 };
 
@@ -41,10 +41,11 @@ export const parseStyles = (values: string): Style => {
     .replace(/\b38;5;(\d+)\b/, '38_5_$1')
     .replace(/\b48;2;(\d+);(\d+);(\d+)\b/, '48_2_$1_$2_$3')
     .replace(/\b38;2;(\d+);(\d+);(\d+)\b/, '38_2_$1_$2_$3');
+
   values.split(/;/).forEach((value) => {
     let match;
 
-    if (value === '0') {
+    if (value === '0' || value === '') {
       newStyle = {
         ...defaultStyle,
       };
@@ -126,7 +127,7 @@ export const parseStyles = (values: string): Style => {
       newStyle.fg = simplifyColour('true-' + match.slice(1).join('-'));
     } else if ((match = value.match(/^38_5_(\d+)$/))) {
       newStyle.fg = simplifyColour('256-' + match[1]);
-    } else if ((match = value.match(/^(3|9)[0-79]$/))) {
+    } else if ((value.match(/^(3|9)[0-79]$/))) {
       newStyle.fg = value;
     }
 
@@ -134,7 +135,7 @@ export const parseStyles = (values: string): Style => {
       newStyle.bg = simplifyColour('true-' + match.slice(1).join('-'), true);
     } else if ((match = value.match(/^48_5_(\d+)$/))) {
       newStyle.bg = simplifyColour('256-' + match[1], true);
-    } else if ((match = value.match(/^(4|10)[0-79]$/))) {
+    } else if ((value.match(/^(4|10)[0-79]$/))) {
       newStyle.bg = value;
     }
   });
